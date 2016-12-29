@@ -12,7 +12,7 @@ $(function(){
 		
 		$('body').append($intro_text);
 
-		for(i=0;i<11;i++)
+		for(i=0;i<12;i++)
 		{
 			$( "a" ).eq(i).attr( 'href','http://vit.edu'+ $("a").eq(i).attr('href'));
 
@@ -26,7 +26,7 @@ $(document).ready(function()
 {
 
 	$("body").on('click',".fa-code", function(){
-	    chrome.tabs.create({ url: "https://github.com/nileshprasad137" });
+	    chrome.tabs.create({ url: "https://github.com/nileshprasad137/NoticeFeed-VITPune" });
 	  });
 })
 
