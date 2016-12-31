@@ -1,7 +1,18 @@
-var notices = [];
 
-$(function(){
-	//alert();
+var notices = [];
+var i;
+var latest_notice;
+
+$(function()
+{
+	get_latest_notices();
+	setInterval(get_latest_notices,60000);
+	//get the update in an interval of 10 minutes
+});
+
+
+function get_latest_notices()
+{
 	$.get("http://vit.edu/index.php/news/latest-news",function(data)
 	{
 		var html_data = data;
@@ -14,8 +25,52 @@ $(function(){
 		for(i=0;i<11;i++)
 		{
 			$( "a" ).eq(i).attr( 'href','http://vit.edu'+ $("a").eq(i).attr('href'));
+			notices[i] =  $($intro_text).eq(i).text();
+			//console.log(notices[i]);
 
 		}
+
+		if(latest_notice === undefined)
+		{
+			//first run in chrome browser
+			var first_run = {
+							  type: "basic",
+							  title: "NoticeFeed-VITPune",
+							  message: "Hey! You may like to check latest notices posted..",
+							  iconUrl: "vit.png"
+							}			 
+				
+
+				chrome.notifications.create(first_run );//this is asynchronous
+				latest_notice = notices[0];	
+				console.log(latest_notice);//works fine...
+
+		}
+
+		else if(latest_notice == notices[0])
+		{
+			//dont update
+			//console.log("No Updates");
+		}
+
+		else if(latest_notice != notices[0])
+		{
+			//update
+			latest_notice = notices[0];
+			var notice_notifier = {
+							  type: "basic",
+							  title: "A new notice was posted on vit.edu",
+							  message: latest_notice,
+							  iconUrl: "vit.png"
+							}			 
+				
+
+				chrome.notifications.create(notice_notifier);
+
+
+		}
+
+		/*
 
 		for(i=0;i<3;i++)
 			{
@@ -37,6 +92,10 @@ $(function(){
 					}
 			}
 
+			*/
+
 	})
-})
+
+}
+
 
