@@ -2,7 +2,7 @@ var notices = [];
 
 $(function(){
 	//alert();
-	$.get("http://vit.edu/index.php/news/latest-news",function(data)
+	$.get("http://vit.edu/index.php/news/latest-news").done(function(data)
 	{
 		var html_data = data;
 		//$('body').append($(html_data).find('.catItemIntroText'));
@@ -19,6 +19,11 @@ $(function(){
 		}
 			
 
+	})
+	.fail(function()
+	{		
+		$('body').append("<br><br><div>You are not connected to Internet.</div>");
+		$('body').append("(-_-)");
 	})
 })
 

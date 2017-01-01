@@ -6,12 +6,12 @@ var latest_notice;
 $(function()
 {
 	get_latest_notices();
-	setInterval(get_latest_notices,60000);
-	//get the update in an interval of 10 minutes
+	setInterval(get_latest_notices,120000);
+	//get the update in an interval of 20 minutes
 });
 
 
-function get_latest_notices()
+function get_latest_notices() 
 {
 	$.get("http://vit.edu/index.php/news/latest-news",function(data)
 	{
