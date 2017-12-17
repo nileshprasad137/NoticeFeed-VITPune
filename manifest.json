@@ -5,16 +5,16 @@
 	"description" : "This chrome extension keeps you updated with latest notices posted on vit.edu .",
 	"version" : "1.0",
 
-	"browser_action" :
-	{
-		
-		"default_popup" : "popup.html"
-	},
-
-	"icons": { "16": "img/extension_icon.png",
-	           "32": "img/extension_icon.png",
-	           "48": "img/extension_icon.png",
-			   "128": "img/extension_icon.png" },
+	"browser_action": {
+		"default_icon": {                    
+		  "16": "assets/img/extension_icon.png",           
+		  "24": "assets/img/extension_icon.png",           
+		  "32": "assets/img/extension_icon.png",
+		  "128": "assets/img/extension_icon.png"            
+		},
+		"default_title": "VIT-NoticeFeed",      
+		"default_popup": "popup.html"      
+	  },	
 
 	"background":
 	{
