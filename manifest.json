@@ -28,7 +28,5 @@
 		"http://vit.edu/index.php/news/latest-news"
 	],
 
-	"content_security_policy": "script-src 'self' https://vit.edu; object-src 'self'"
-	
-	
+	"content_security_policy": "script-src 'self'; object-src 'self'"
 }
