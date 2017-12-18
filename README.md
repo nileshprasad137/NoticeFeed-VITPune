@@ -15,3 +15,9 @@ This Chrome Extension is developed to keep me updated with any new notices poste
 4. Check on developer mode.
 5. Load unpacked extension.
 6. Select NoticeFeed-VITPune folder.
+
+## License
+
+This Chrome Extension is licensed under the [MIT license] (https://opensource.org/licenses/MIT).
+
+Feel free to contribute !
