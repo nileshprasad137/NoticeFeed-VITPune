@@ -7,25 +7,23 @@
 
 	"browser_action": {
 		"default_icon": {                    
-		  "16": "assets/img/extension_icon.png",           
-		  "24": "assets/img/extension_icon.png",           
-		  "32": "assets/img/extension_icon.png",
-		  "128": "assets/img/extension_icon.png"            
+		  "16": "assets/img/notifyicon.png",           
+		  "24": "assets/img/notifyicon.png",           
+		  "32": "assets/img/notifyicon.png",
+		  "128": "assets/img/notifyicon.png"            
 		},
 		"default_title": "VIT-NoticeFeed",      
 		"default_popup": "popup.html"      
-	  },	
+	},	
 
-	"background":
-	{
+	"background":	{
 		"page" : "background.html"
 	},
 
-	"permissions" : 
-	[
+	"permissions" : [
 		"storage",
 		"notifications",
-		"http://vit.edu/index.php/news/latest-news"
+		"https://vit-noticefeed-api.herokuapp.com/"
 	],
 
 	"content_security_policy": "script-src 'self'; object-src 'self'"
