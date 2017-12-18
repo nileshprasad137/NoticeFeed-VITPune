@@ -14,7 +14,6 @@ function displayNotices(){
       }   
       else if (xhr.readyState == 4) {        
         var data = JSON.parse(xhr.responseText);
-       //console.log(data);       
         for(i=0;i<data.length;i++){
          noticeTitle[i] = data[i]['noticeTitle'];
          noticeLink[i] = data[i]['noticeLink'];
@@ -27,5 +26,13 @@ function displayNotices(){
     }
     xhr.send();
 } 
+
+$(document).ready(function()
+{
+  // Open repository link in new tab
+	$("body").on('click',".fa-code", function(){
+	    chrome.tabs.create({ url: "https://github.com/nileshprasad137/NoticeFeed-VITPune" });
+	  });
+})
 
 displayNotices();
