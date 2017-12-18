@@ -21,7 +21,7 @@ function displayNotices(){
        }
        $('#load-div').remove();
        for(i=0;i<data.length;i++){
-        $('#notice-div').append(noticeTitle[i]);        
+        $('#notice-div').append("<div class='notice-card'>"+"<a href="+noticeLink[i]+">"+noticeTitle[i]+"</a></div>");             
        }          
       }
     }
